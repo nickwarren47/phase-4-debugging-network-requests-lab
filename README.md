@@ -62,12 +62,17 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: When I attempted to add a new toy, I got a "500 Internal Server Error", so I looked at the 
+  Rails terminal (where I ran "rails s" command) and saw that it is traced back to the "create" action in our controller. 
+  From there, I looked to see if there were any spelling mistakes and the "Toy.create" had the spelling mistake of "Toys.create".
+
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: I found the error "Unexpected end of JSON input" when I tried to use the like feature. 
+  This means that we need to add a "render json:" line of code for this feature to update.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: When I clicked on the "Donate to GoodWill" button, I got a "404 error" with a "RoutingError".
+  Therefore, we must add a route for the "destroy" action
